@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- Bootstrap CSS -->
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--Bootstrap Toggle-->
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <title>Services</title>
+</head>
+
+<body>
+    <!--Contain Service Section When Empty and no categories-->
+    <div class="container">
+        <div class="row">
+            <!--Top Section with page label-->
+            <div class="col-12 pl-0">
+                <h2>
+                    Services
+                </h2>
+                <p class="text-muted">
+                    The services you want to offer your customers
+                </p>
+            </div>
+            <div class="col-12 mt-4 contain-no-service-message">
+                <div class="no-service-image-and-button text-center">
+                    <img src="/images/icon.png">
+                    <p class="text-muted mt-4">There's nothing here yet!</p>
+                    <button class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#addCategoryModal">+
+                        New Category</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--------------------------------------------------------------------->
+    <hr class="mt-5 mb-5">
+    <!--------------------------------------------------------------------->
+
+
+    <!-- Contain Services when categories available-->
+    <div class="container">
+        <div class="row">
+            <!--Top Section with page label and button-->
+            <div class="col-12 col-lg-6 pl-0">
+                <h2>
+                    Services
+                </h2>
+                <p class="text-muted">
+                    The services you want to offer your customers
+                </p>
+            </div>
+            <div class="col-12 col-lg-6 text-right">
+                <button class="btn btn-sm btn-style" data-toggle="modal" data-target="#addCategoryModal">
+                    + Add Category
+                </button>
+            </div>
+        </div>
+
+        <!--Contain service category and list when services available - Repeat for every cateogry-->
+        <div class="row">
+            <div class="col-12 mt-4 pl-0">
+                <table class="table contain-services-list" cellspacing="0" cellpadding="0">
+                    <thead class="head w-100">
+                        <tr>
+                            <th scope="col">Category Name</th>
+                            <th scope="col"></th>
+                            <th scope="col">
+                                <!--Category Options Dropdown-->
+                                <div class="col-12 text-right">
+                                    <div class="dropdown">
+                                        <span class="dropdown-toggle" type="button" data-toggle="dropdown">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </span>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li><i class="fas fa-arrow-up ml-2 mr-2"></i> Move Up</li>
+                                            <hr />
+                                            <li><i class="fas fa-arrow-down ml-2 mr-2"></i> Move Down</li>
+                                            <hr />
+                                            <li><i class="fas fa-trash-alt ml-2 mr-2"></i> Delete Category</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--Output table row for each service in this category-->
+                        <tr class="contain-service">
+                            <td scope="col" style="width: 40%;">Service Name</td>
+                            <td scope="col" style="width: 30%;">€0</td>
+                            <td scope="col">
+                                <div class="row p-0 m-0">
+                                    <!--Contains hidden elements that are then visible on hoover - Only on Desktop ??-->
+                                    <div class="col-6 p-0 m-0 reveal-edit-icons text-right d-none d-lg-block">
+                                        <ul class="list-unstyled my-auto">
+                                            <!--Edit item-->
+                                            <li class="d-inline mr-3"><i
+                                                    class="fas fa-pen contain-edit-icons d-none"></i></li>
+                                            <!--Delete item-->
+                                            <li class="d-inline"><i
+                                                    class="fas fa-trash-alt contain-edit-icons d-none"></i></li>
+                                        </ul>
+                                    </div>
+                                    <!--Toggle Enable/Disable Service-->
+                                    <div class="col-6 m-0 p-0 text-right"><input type="checkbox" checked
+                                            data-toggle="toggle" data-on=" " data-off=" " class="toggle-color"
+                                            data-style="ios" data-size="xs"></div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!--Add Service Button-->
+                        <tr>
+                            <td><button class="btn btn-sm btn-style mt-3" data-toggle="modal"
+                                    data-target="#addServiceModal">+ Add</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!--------------------------------------------------------------------->
+    <hr class="mt-5 mb-5">
+    <!--------------------------------------------------------------------->
+
+
+    <!--Contain empty category-->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-4 contain-no-service-message">
+                <div class="row">
+                    <div class="col-6 text-left mt-3 heading-bold">Category Name</div>
+                    <div class="col-6 text-right mt-3">
+                        <div class="dropdown">
+                            <span class="dropdown-toggle" type="button" data-toggle="dropdown">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </span>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><i class="fas fa-arrow-up ml-2 mr-2"></i> Move Up</li>
+                                <hr />
+                                <li><i class="fas fa-arrow-down ml-2 mr-2"></i> Move Down</li>
+                                <hr />
+                                <li><i class="fas fa-trash-alt ml-2 mr-2"></i> Delete Category</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="no-service-image-and-button text-center">
+                    <img src="/images/icon2.png">
+                    <p class="text-muted mt-4">There's nothing here yet!</p>
+                    <button class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#addServiceModal">+ Add
+                        Servive</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--------------------------------------------------------------------->
+    <hr class="mt-5 mb-5">
+    <!--------------------------------------------------------------------->
+
+
+
+
+    <!---------------------------------------------------------------------
+        ### MODALS ###
+    --------------------------------------------------------------------->
+
+    <!--Add Category Modal-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="addCategoryModal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-shopping-cart mr-3"></i>Category Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="new-category-name" class="heading-bold">Name *</label>
+                    <input class="form-control" type="text" name="new-category-name" id="new-category-name"
+                        placeholder="Hair, Nails etc">
+                    <label for="new-category-desc" class=" heading-bold mt-3">Desciption</label>
+                    <input class="form-control" type="text" name="new-category-desc" id="new-category-desc"
+                        placeholder="Hair, Nails etc">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Confirm</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Add Service Modal-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="addServiceModal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-shopping-cart mr-3"></i>Service Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="new-service-name" class="heading-bold">Name *</label>
+                    <input class="form-control" type="text" name="new-service-name" id="new-service-name"
+                        placeholder="Blowdry, Gel Nails etc">
+                    <label for="new-service-desc" class="heading-bold mt-3">Description *</label>
+                    <input class="form-control" type="text" name="new-service-name" id="new-service-desc">
+                    <label for="choose-category" class="heading-bold mt-3">Category *</label>
+                    <select class="form-control" type="text" name="service-category" id="category">
+                        <option value="" disabled selected>Select Category</option>
+                        <!--Populate with categories-->
+                        <option>Category One</option>
+                    </select>
+                    <label for="duration" class="heading-bold mt-3">Duration *</label>
+                    <select class="form-control" type="text" name="duration" id="duration">
+                        <option value="" disabled selected>Choose Duration</option>
+                        <!--Populate with times-->
+                        <option>1 Hr</option>
+                    </select>
+                    <label for="price-type" class="heading-bold mt-3">Price Type *</label>
+                    <select class="form-control" type="text" name="price-type" id="price-type">
+                        <option value="" disabled selected>Choose Price Type</option>
+                        <!--Populate with price types-->
+                        <option>Choice 1</option>
+                    </select>
+                    <label for="price" class="heading-bold mt-3">Price *</label>
+                    <input class="form-control" type="text" name="price" id="price" placeholder="€">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Confirm</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    <!--Import JS-->
+    <script src="/ui.js"></script>
+</body>
+
+</html>

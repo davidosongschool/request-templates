@@ -1,0 +1,94 @@
+/** Ignore */
+body {
+    font-family: Lato;
+    margin-top: 100px;
+}
+
+/* ---- Services Page Main */
+
+.btn-style {
+    color: #39ACFF;
+    background-color: #fff;
+    border: 1px solid #39ACFF;
+    font-weight: bold;
+
+}
+
+/* No services box style */
+.contain-no-service-message {
+    height: 400px;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+
+.no-service-image-and-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    margin: 0 auto;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+
+thead,
+tbody,
+td {
+    border: none !important;
+}
+
+.table td,
+.table th {
+    border: none;
+    vertical-align: middle !important;
+}
+
+
+.contain-services-list {
+    border: 1px solid lightgrey !important;
+    border-radius: 5px !important;
+}
+
+.table {
+    border-collapse: separate !important;
+}
+
+.table thead th {
+    border-bottom: 1px solid lightgrey !important;
+}
+
+.fa-pen,
+.fa-arrow-down,
+.fa-arrow-up {
+    color: #0B99FF;
+}
+
+.fa-trash-alt {
+    color: red;
+}
+
+/* Toggle Style */
+.toggle.ios,
+.toggle-on.ios,
+.toggle-off.ios {
+    border-radius: 20rem;
+    color: #0B99FF !important;
+}
+
+.toggle.ios .toggle-handle {
+    border-radius: 20rem;
+}
+
+.bg-lightgrey {
+    background-color: rgba(218, 218, 218, 0.486);
+}
+
+.heading-bold {
+    font-weight: bold;
+}
